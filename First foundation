@@ -1,3 +1,5 @@
+# I am calling rating incorrectly because self.rating is now overwriting the method
+
 class Currency():
 	def __init__(self, code, score, trend):
 		self.code = code
@@ -5,16 +7,16 @@ class Currency():
 		self.trend = trend
 	def rating(self):
 		if self.score >= 75:
-			rating = 'Strong'
+			self.rating = 'Strong'
 		elif self.score <= 74 and self.score >= 50:
-			rating = 'Moderate'
+			self.rating = 'Moderate'
 		else:
-			rating = 'Weak'
-		return rating
-	def display(self, rating): # Rating is already in the class I don't have to pass it in as a parameter.
+			self.rating = 'Weak'
+	def display(self):
 		print(f'Currency: {self.code}')
+		print(f'Currency: {self.score}')
 		print(f'Trend: {self.trend}')
-		print(f'Rating: {rating}')
+		print(f'Rating: {self.rating}')
 
 currency1 = Currency('USD', 42, 'Weak')
 currency2 = Currency('EUR', 55, 'Neutral')
