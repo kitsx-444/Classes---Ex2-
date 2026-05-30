@@ -27,6 +27,7 @@ currency1 = Currency('USD', 42, 'Weak')
 currency2 = Currency('EUR', 55, 'Neutral')
 currency3 = Currency('GBP', 2, 'Weak')
 
-display(currency1) # Is this how to call display? Hmm...
-display(currency2)
-display(currency3)
+currency1.display(rating) # NameError: how is this not defined?
+currency2.display(rating)
+currency3.display(rating)
+
