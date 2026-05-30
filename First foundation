@@ -1,4 +1,5 @@
 # I am calling rating incorrectly because self.rating is now overwriting the method
+#When you do self.rating = 'Strong' inside rating(), you're replacing the method itself with a string. That means self.rating is no longer callable as a method.
 
 class Currency():
 	def __init__(self, code, score, trend):
