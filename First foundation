@@ -6,28 +6,26 @@ class Currency():
 
 	def rating(self):
 		if self.score >= 75:
-			rating = self.rating() # That calls the method and stores the result. Then use rating in your f-string.
-			print('Strong')
+			rating = 'Strong'
 		elif self.score <= 74 and self.score >= 50:
-			rating = self.rating()
-			print('Moderate')
+			rating = 'Moderate'
 		else:
-			rating = self.rating()
-			print('Weak')
+			rating = 'Weak'
 		return rating
 
-	def display(self, rating):
+	def display(self):
+		rating = self.rating()  # Rating is called here instead. If it were called in rating(self) it will call itself forever,
 		print(f'Currency: {self.code}')
 		print(f'Score: {self.score}')
 		print(f'Trend: {self.trend}')
-		print(f'Rating: {rating}')
+		print(f'Rating: {rating}\n') # Added \n to improve the output UI
 
 
 currency1 = Currency('USD', 42, 'Weak')
 currency2 = Currency('EUR', 55, 'Neutral')
 currency3 = Currency('GBP', 2, 'Weak')
 
-currency1.display(rating) # NameError: how is this not defined?
-currency2.display(rating)
-currency3.display(rating)
+currency1.display() # NameError: how is this not defined? It was because I passed in the argument.
+currency2.display()
+currency3.display()
 
